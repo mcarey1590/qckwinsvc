@@ -14,6 +14,7 @@ function setupCli () {
   cli.usage('Usage: $0\n       $0 --uninstall')
      .describe('name',             'Windows service name to install/uninstall (don\'t confuse with the display name.')
      .describe('description',      'Service description.')
+	   .describe('execPath',         'Path of Node.exe')
      .describe('script',           'Path of the node script to be installed as a service.')
      .describe('startImmediately', 'Should the service get started immediately.')
 }
@@ -45,6 +46,9 @@ function promptOptions () {
       description: {
         description: 'Service description'
       },
+	    execPath: {
+		    description: 'Path to Node.exe'
+	    },
       script: {
         description: 'Node script path',
         required:    true
